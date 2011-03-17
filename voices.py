@@ -1,5 +1,5 @@
 import sys, getopt, urlparse, cgi, socket
-from subprocess import call
+from subprocess import call, Popen, PIPE
 from wsgiref.util import setup_testing_defaults, request_uri
 from wsgiref.simple_server import make_server
 
@@ -12,9 +12,13 @@ def voices_server(environ, start_response):
     voice, message = (qs.get('v') and qs['v'][0] or "",qs.get('m') and qs['m'][0] or "")
     response_message = ""
     if voice and message: 
-        call(['osascript', '-e', 'set Volume 5'])
+        volume = int(Popen(['osascript', '-e', 'get (output volume of (get volume settings))'], stdout=PIPE).stdout.read().strip())
+        print volume
+        if volume < 10:
+            call(['osascript', '-e', 'set Volume 5'])
         call(['say', '-v', '%s' % voice, '%s' % message])
-        call(['osascript', '-e', 'set Volume 0'])
+        if volume < 10:
+            call(['osascript', '-e', 'set Volume %s' % volume])
         response_message = "<i>Say command sent.</i><br /><br />"
     return """%s<form action="" method="get">Voice: <select name="v">%s</select><br/><br />
             message:<br/><textarea style="height: 100px; width:400px;" name="m">%s</textarea>
