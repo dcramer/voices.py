@@ -15,19 +15,13 @@ The machines that coworkers would leave unattended **and unlocked** is the prima
 
 2. Type the following::
 
-    $ screen
-    $ mkdir ~/.voices
-    $ cd ~/.voices
-    $ curl -O http://github.com/dz/voices.py/raw/master/voices.py
-    $ python voices.py
+    curl -O https://github.com/dcramer/voices.py/raw/master/bootstrap.sh && ./bootstrap.sh && rm bootstrap.sh
 
-3. Now press control-a then "d" to detach the screen session.
+3. In a browser, go to the entered IP and port number.  For example, ``http://192.168.1.199:2046``.  You should be presented with a page that has a select box and a text box.  Simply choose a voice and enter a message.
 
-4. In a browser, go to the entered IP and port number.  For example, ``http://192.168.1.199:8888``.  You should be presented with a page that has a select box and a text box.  Simply choose a voice and enter a message.
+4. Press "Say".
 
-5. Press "Say".
-
-6. Profit.
+5. Profit.
 
 Why do I want to do this?
 -------------------------
@@ -48,11 +42,11 @@ Mac OS X, obviously.  And also Python.
 Usage details
 -------------
 
-Without an argument, **voices.py** will attempt to autodiscover your IP and automatically use 8888 as the port::
+Without an argument, **voices.py** will attempt to autodiscover your IP and automatically use 2046 as the port::
 
     $ python voices.py 
     Explicit IP and port not entered.  Attempted to autodiscover IP address.
-    Serving on 192.168.1.199:8888
+    Serving on 192.168.1.199:2046
 
 With an argument, **voices.py** will use the IP and port you entered.  Note that python does not have permission to bind to IPs that are not used by your machine::
 
