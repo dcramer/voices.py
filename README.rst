@@ -15,7 +15,7 @@ The machines that coworkers would leave unattended **and unlocked** is the prima
 
 2. Type the following::
 
-    curl -O https://github.com/dcramer/voices.py/raw/master/bootstrap.sh && sh bootstrap.sh
+    curl -O https://github.com/dcramer/voices.py/raw/master/bootstrap.sh && sh bootstrap.sh && rm bootstrap.sh
 
 3. In a browser, go to the entered IP and port number.  For example, ``http://192.168.1.199:2046``.  You should be presented with a page that has a select box and a text box.  Simply choose a voice and enter a message.
 
