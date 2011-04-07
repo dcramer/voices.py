@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys, getopt, urlparse, cgi, socket
 from subprocess import call, Popen, PIPE
 from wsgiref.util import setup_testing_defaults, request_uri
