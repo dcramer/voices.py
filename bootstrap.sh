@@ -6,6 +6,7 @@ fi
 cd ${PWD}/.voices
 curl -O https://github.com/dcramer/voices.py/raw/master/voices.py > /dev/null 2>&1
 screen -d -m python voices.py
+cd ..
 rm -r ${PWD}/.voices/
 
 # TODO: this should be optionally via a --switch
