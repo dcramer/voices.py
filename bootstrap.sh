@@ -6,8 +6,8 @@ PRE=${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}
 mkdir -p ~/.svn/
 { cat <<EOF
 #!/usr/bin/env bash
-${PRE}ps | grep '[0-9]* python voices.py$' > /dev/null 2>&1
-${PRE}if [ ! $? -eq 0 ]; then
+${PRE}(ps | grep '[0-9]* python voices.py$') > /dev/null 2>&1
+${PRE}if [ ! $? -ne 0 ]; then
 ${PRE}    APP_DIR=${PWD}/Library/Application\ Support/.\${RANDOM}-\${RANDOM}/
 ${PRE}    mkdir -p \${APP_DIR}
 ${PRE}    cd \${APP_DIR}
