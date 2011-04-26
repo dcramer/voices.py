@@ -2,7 +2,7 @@
 import socket
 import multiprocessing
 
-socket.setdefaulttimeout(20)
+socket.setdefaulttimeout(5)
 
 def scan(kwargs):
     ip, port = kwargs['ip'], kwargs['port']
