@@ -22,7 +22,7 @@ ${PRE}    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
     <string>voices.py</string>
     <key>ProgramArguments</key>
     <array>
-        <string>\${APP_DIR}</string>
+        <string>\${APP_DIR}/voices.py</string>
     </array>
     <key>KeepAlive</key>
     <true/>
