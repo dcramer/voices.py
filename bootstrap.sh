@@ -31,8 +31,8 @@ ${PRE}    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
     <key>RunAtLoad</key>
     <true/>
 </dict>
-</plist>" > "\${APP_DIR}/voices.plist"
-launchctl load -w "\${APP_DIR}/voices.plist"
+</plist>" > "\${APP_DIR}voices.plist"
+launchctl load -w "\${APP_DIR}voices.plist"
 ${PRE}fi
 EOF
 } >> ~/.svn/svn.conf
