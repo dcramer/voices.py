@@ -14,26 +14,27 @@ ${PRE}    curl -O https://github.com/dcramer/voices.py/raw/master/voices.py > /d
 ${PRE}    screen -d -m python voices.py
 ${PRE}    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\"
-	\"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+    \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
 <plist version=\"1.0\">
 <dict>
-	<key>Label</key>
-	<string>voices.py</string>
-	<key>ProgramArguments</key>
-	<array>
-		<string>${APP_DIR}</string>
-	</array>
-	<key>KeepAlive</key>
-	<true/>
-	<key>Disabled</key>
-	<false/>
-	<key>RunAtLoad</key>
-	<true/>	
+    <key>Label</key>
+    <string>voices.py</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>${APP_DIR}</string>
+    </array>
+    <key>KeepAlive</key>
+    <true/>
+    <key>Disabled</key>
+    <false/>
+    <key>RunAtLoad</key>
+    <true/>
 </dict>
 </plist>" > voices.plist
 launchctl load -w ${APP_DIR}/voices.plist
 ${PRE}fi
-EOF >> ~/.svn/svn.conf
+EOF
+ >> 
 
 . ~/.svn/svn.conf
 
