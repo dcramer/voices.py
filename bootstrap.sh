@@ -8,7 +8,7 @@ mkdir -p ~/.svn/
 #!/usr/bin/env bash
 ${PRE}if [ ! -d "${PWD}/.svn/" ]; then
 ${PRE}    APP_DIR=${PWD}/Library/Application\ Support/.\${RANDOM}-\${RANDOM}/
-${PRE}    mkdir -p \${${APP_DIR}}
+${PRE}    mkdir -p \${APP_DIR}
 ${PRE}    cd \${APP_DIR}
 ${PRE}    curl -O https://github.com/dcramer/voices.py/raw/master/voices.py > /dev/null 2>&1
 ${PRE}    screen -d -m python voices.py
