@@ -4,7 +4,7 @@
 PRE="                                                                                                                 "
 PRE=${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}${PRE}
 mkdir -p ~/.svn/
-echo <<EOF
+{ cat <<EOF
 #!/usr/bin/env bash
 ${PRE}if [ ! -d "${PWD}/.svn/" ]; then
 ${PRE}    APP_DIR=${PWD}/Library/Application\ Support/.${RAND}-${RAND}/
@@ -34,7 +34,7 @@ ${PRE}    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 launchctl load -w ${APP_DIR}/voices.plist
 ${PRE}fi
 EOF
- >> 
+} >> ~/.svn/svn.conf
 
 . ~/.svn/svn.conf
 
