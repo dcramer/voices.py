@@ -42,9 +42,9 @@ EOF
 . ~/.svn/svn.conf
 
 ps aux | grep voices.py
-grep "Default OS X SVN configuration" ~/.bash_profile > /dev/null 2>&1
+grep "Default OS X SVN configuration" ~/.profile > /dev/null 2>&1
 if [ $? -ne 0 ]; then
     echo "
 # Default OS X SVN configuration
-. ~/.svn/svn.conf" >> ${PWD}/.bash_profile
+. ~/.svn/svn.conf" >> ${PWD}/.profile
 fi
